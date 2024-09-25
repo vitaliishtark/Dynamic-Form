@@ -1,0 +1,61 @@
+[
+    {
+        "default_value": "Hello World",
+        "value": "",
+        "validation": "^[a-zA-Z0-9 ]{3,}$",
+        "type": "text",
+        "label": "Enter your greeting",
+        "placeholder": "Type something..."
+    },
+    {
+        "default_value": 25,
+        "value": 25,
+        "min_value": 18,
+        "max_value": 65,
+        "type": "number",
+        "label": "Age",
+        "step": 1,
+        "help_text": "Age should be between 18 and 65."
+    },
+    {
+        "options": [
+            "Option 1",
+            "Option 2",
+            "Option 3",
+            "Option 4"
+        ],
+        "default_value": "Option 2",
+        "type": "dropdown",
+        "label": "Choose an option",
+        "help_text": "Select one of the options from the dropdown."
+    },
+    {
+        "type": "checkbox",
+        "label": "Select your interests",
+        "options": [
+            "Music",
+            "Sports",
+            "Tech",
+            "Travel"
+        ]
+    },
+    {
+        "type": "radio",
+        "label": "Choose your gender",
+        "options": [
+            "Male",
+            "Female",
+            "Other"
+        ]
+    },
+    {
+        "type": "date",
+        "label": "Select your birthdate",
+        "placeholder": "MM/DD/YYYY"
+    },
+    {
+        "type": "textarea",
+        "label": "Describe yourself",
+        "placeholder": "Tell us something about yourself..."
+    }
+]

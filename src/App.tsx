@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import Form from './DynamicForm/DynamicForm';
+import data from './data.json';
+import './App.css'
+import { FormField } from './types';
 
-function App() {
+const App: React.FC = () => {
+  const [formData, setFormData] = useState<FormField[] | any>([]);
+  const [resultOfDynamicForm, setResultOfDynamicForm] = useState<FormField[]>([])
+
+  useEffect(() => {
+    setFormData(data);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Dynamic Form</h1>
+      {formData.length > 0 && <Form formData={formData} setResultOfDynamicForm={setResultOfDynamicForm} resultOfDynamicForm={resultOfDynamicForm} />}
+      <h2>Results</h2>
+      {resultOfDynamicForm.map((it, index) => (
+        <div key={index} className="entry-container">
+          <h3>Result {index + 1}</h3>
+          <hr />
+          <code>
+            {JSON.stringify(it)}
+          </code>
+        </div>
+      ))}
     </div>
   );
-}
+};
 
 export default App;
